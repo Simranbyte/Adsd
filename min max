@@ -1,0 +1,32 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void findMaxMin(const vector<int>& arr, int& maxVal, int& minVal) {
+    if (arr.empty()) {
+        cout << "Array is empty!" << endl;
+        return;
+    }
+
+    maxVal = arr[0];
+    minVal = arr[0];
+
+    for (int i = 1; i < arr.size(); ++i) {
+        if (arr[i] > maxVal)
+            maxVal = arr[i];
+        if (arr[i] < minVal)
+            minVal = arr[i];
+    }
+}
+
+int main() {
+    vector<int> arr = {10, 4, 2, 98, 23, -5, 34, 0};
+
+    int maxVal, minVal;
+    findMaxMin(arr, maxVal, minVal);
+
+    cout << "Maximum value in the array: " << maxVal << endl;
+    cout << "Minimum value in the array: " << minVal << endl;
+
+    return 0;
+}
